@@ -1,0 +1,39 @@
+name: deploy to netlify
+
+on:
+  push:
+    branches: [ develop ]
+  pull_request:
+    branches: [ develop ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+      - uses: actions/checkout@v2
+
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+
+      - run: npm i
+
+      - run: npm run build --if-present
+
+      - name: Codecov
+        uses: codecov/codecov-action@v2.1.0
+
+      - name: Deploy static content to netlify
+        env:
+            NETLIFY_AUTH_TOKEN: "6_RbCFxs3Y--PPpYAyog9EIu_0W6xbsk_rfEBgMLsBw"
+            NETLIFY_SITE_ID: "7f490b15-869b-4ae0-8133-e59c6fa32814"
+        run: netlify deploy --prod
+
