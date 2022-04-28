@@ -1,5 +1,6 @@
 import { VFC } from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 import Dashboard from './pages/dashboard/Dashboard';
 import Home from './pages/Home';
 
@@ -11,6 +12,10 @@ export const ROUTE_LINKS = {
 
 const Routes: VFC = () => (
   <BrowserRouter>
+    <Helmet>
+      <title> {process.env.REACT_APP_SITE_TITLE}</title>
+    </Helmet>
+
     <Switch>
       <Route exact path={ROUTE_LINKS.Home} component={Home} />
       <Route exact path={ROUTE_LINKS.Dashboard} component={Dashboard} />

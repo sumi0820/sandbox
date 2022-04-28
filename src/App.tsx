@@ -10,132 +10,70 @@ const theme = createTheme({
   overrides: {
     MuiCssBaseline: {
       '@global': {
-        body: {
+        'html, body': {
           WebkitFontSmoothing: 'auto',
           margin: 0,
           padding: 0,
           backgroundColor: '#ffff',
+          fontSize: '16px !important',
+          fontFamily: 'Lato',
+          [breakpoints.up('sm')]: {
+            fontSize: '14px !important',
+          },
+          [breakpoints.down('xs')]: {
+            fontSize: '10px !important',
+          },
         },
         h1: {
-          fontSize: '96px',
+          fontSize: '6rem',
           fontFamily: 'Noto Sans',
-          [breakpoints.up('sm')]: {
-            fontSize: '60px',
-          },
-          [breakpoints.down('xs')]: {
-            fontSize: '.8rem',
-          },
+          margin: '0',
         },
         h2: {
-          fontSize: '60px',
+          fontSize: '4rem',
           fontFamily: 'Noto Sans',
-          margin: '0 !important',
-          lineHeight: '90%',
-          [breakpoints.up('sm')]: {
-            fontSize: '48px',
-            whiteSpace: 'nowrap',
-            margin: '5px 0 !important',
-          },
-          [breakpoints.down('xs')]: {
-            fontSize: '1.3rem',
-            margin: '2px 0 !important',
-            whiteSpace: 'nowrap',
-          },
+          margin: '0',
         },
         h3: {
-          fontSize: '48px',
+          fontSize: '3rem',
           fontFamily: 'Noto Sans',
-          [breakpoints.up('sm')]: {
-            fontSize: '34px',
-          },
-          [breakpoints.down('xs')]: {
-            fontSize: '4rem',
-          },
+          margin: '0',
         },
         h4: {
-          fontSize: '34px',
-          fontFamily: 'Lato',
+          fontSize: '2rem',
+          fontFamily: 'Noto Sans',
           margin: '0',
-          [breakpoints.down('sm')]: {
-            fontSize: '24px',
-          },
-          [breakpoints.down('xs')]: {},
         },
         h5: {
-          fontSize: '24px',
-          fontFamily: 'Lato',
+          fontSize: '1.5rem',
+          fontFamily: 'Noto Sans',
           margin: '0',
-          lineHeight: '90%',
-          [breakpoints.down('sm')]: {
-            fontSize: '20px',
-          },
-          [breakpoints.down('xs')]: {
-            fontSize: '.9rem',
-          },
         },
         h6: {
-          fontSize: '20px',
-          fontFamily: 'Lato',
+          fontSize: '1.25rem',
+          fontFamily: 'Noto Sans',
           margin: '0',
-          lineHeight: '90%',
-          [breakpoints.down('sm')]: {
-            fontSize: '16px',
-          },
-          [breakpoints.down('xs')]: {
-            fontSize: '.8rem',
-          },
         },
         p: {
-          fontSize: '16px',
-          fontFamily: 'Lato',
-          letterSpacing: '-0.05em',
-          [breakpoints.down('sm')]: {
-            fontSize: '14px',
-          },
-          [breakpoints.down('xs')]: {
-            fontSize: '12px',
-            marginTop: '4px',
-            color: '#868686',
-          },
+          fontSize: '1.2rem',
+          margin: '0',
         },
         li: {
-          fontSize: '16px',
-          fontFamily: 'Lato',
-          letterSpacing: '0em',
-          [breakpoints.up('sm')]: {
-            fontSize: '14px',
-          },
-          [breakpoints.down('xs')]: {
-            fontSize: '4rem',
-          },
+          fontSize: '1.2rem',
         },
         ul: {
           listStyleType: 'none',
           margin: '0',
           padding: '0',
-          [breakpoints.up('sm')]: {
-            fontSize: '14px',
-          },
-          [breakpoints.down('xs')]: {
-            fontSize: '.8rem',
-          },
         },
         a: {
-          fontFamily: 'Lato',
-          fontSize: '16px',
-          color: '#96FC9E',
-          letterSpacing: '-0.05em',
+          fontSize: '1.2rem',
+          color: '#33A6B8',
           fontWeight: 'bold',
           textDecoration: 'none',
           textAlign: 'center',
           '&:hover': {
             color: '#F5F946 ',
-          },
-          [breakpoints.up('sm')]: {
-            fontSize: '14px',
-          },
-          [breakpoints.down('xs')]: {
-            fontSize: '.8rem',
           },
         },
       },

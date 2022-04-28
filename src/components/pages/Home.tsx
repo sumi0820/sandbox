@@ -4,7 +4,6 @@ import { makeStyles } from '@material-ui/core';
 // import Footer from '../templates/Footer';
 import MainVisual from 'components/templates/MainVisual';
 
-
 const useStyles = makeStyles(({ breakpoints, palette }) => ({
   container: {
     display: 'flex',
