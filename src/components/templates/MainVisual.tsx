@@ -63,7 +63,20 @@ const MainVisual: React.FC = () => {
       <h5>This is a test - h5</h5>
       <h6>This is a test - h6</h6>
       <p>This is a test - p</p>
-      <a href="https://">This is a test - a</a>
+      <a
+        href="https://twitter.com/StoffelFinance"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        This is a test - a
+      </a>
+      <a
+        href="https://docs.stoffelmpc.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        This is a test - b
+      </a>
       <ul>
         <li>This is a test - li</li>
         <li>This is a test - li</li>

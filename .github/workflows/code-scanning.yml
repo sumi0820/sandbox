@@ -3,6 +3,8 @@ name: "Code Scanning - Action"
 on:
   push:
     branches: [develop]
+  pull_request:
+    types: [opened]
 
 jobs:
   CodeQL-Build:
