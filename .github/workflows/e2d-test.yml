@@ -9,9 +9,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
 
+      - name: Start App
+        run: |
+          yarn
+          yarn build
+          yarn start &
+
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
           build: npm run build
           start: npm start
           wait-on: http://localhost:3000
+          config: screenshotOnRunFailure=false,video=false
