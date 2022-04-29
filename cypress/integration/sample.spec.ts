@@ -1,9 +1,3 @@
-describe('My First Test', () => {
-  it('Does not do much!', () => {
-    expect(true).to.equal(true);
-  });
-});
-
 describe('External link', () => {
   it('should link to a valid link', () => {
     cy.visit('http://localhost:3000/');

@@ -1,8 +1,12 @@
 {
- "extends": "../tsconfig.json",
- "compilerOptions": {
-   "isolatedModules": false,
-   "types": ["cypress"]
- },
- "include": ["./**/*.ts"]
+  "compilerOptions": {
+    "strict": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "baseUrl": "../node_modules",
+    "target": "es5",
+    "lib": ["esnext", "dom"],
+    "types": ["cypress"]
+  },
+  "include": ["**/*.ts"]
 }
