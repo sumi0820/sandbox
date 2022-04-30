@@ -3,30 +3,23 @@ name: End-to-end tests
 on: [push]
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js 12.x
-      uses: actions/setup-node@v1
-      with:
-        node-version: 12.x
-    - run: yarn
-
   cypress-run:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      # Install NPM dependencies, cache them correctly
-      # and run all Cypress tests
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - run: yarn
+
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
           start: yarn start # ローカルサーバーを起動するコマンド
           wait-on: 'http://localhost:3000' # 起動を待つローカルサーバーのURL
 
-          # config: screenshotOnRunFailure=false,video=false
       - name: Upload E2E test videos
         uses: actions/upload-artifact@v1
         if: always()
