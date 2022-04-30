@@ -17,8 +17,10 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
-          start: yarn start # ローカルサーバーを起動するコマンド
-          wait-on: 'http://localhost:3000' # 起動を待つローカルサーバーのURL
+          start: yarn start
+          record: true
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
 
       - name: Upload E2E test videos
         uses: actions/upload-artifact@v1
