@@ -152,4 +152,3 @@ dist
 # Netlify
 .netlify
 
-cypress.json
