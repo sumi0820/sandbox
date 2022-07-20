@@ -37,12 +37,24 @@
     "lint:conflict": "eslint-config-prettier 'src/**/*.{js,jsx,ts,tsx}'",
     "lint:style": "stylelint 'src/**/*.{css,less,sass,scss}'",
     "lint:style:fix": "stylelint --fix 'src/**/*.{css,less,sass,scss}'",
-    "preinstall": "typesync || :"
+    "preinstall": "typesync || :",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
     ]
   },
   "browserslist": {
@@ -58,13 +70,33 @@
     ]
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^6.5.9",
+    "@storybook/addon-console": "^1.2.3",
+    "@storybook/addon-essentials": "^6.5.9",
+    "@storybook/addon-info": "^5.3.21",
+    "@storybook/addon-interactions": "^6.5.9",
+    "@storybook/addon-knobs": "^6.4.0",
+    "@storybook/addon-links": "^6.5.9",
+    "@storybook/addon-storysource": "^6.5.9",
+    "@storybook/addon-viewport": "^6.5.9",
+    "@storybook/builder-webpack4": "^6.5.9",
+    "@storybook/manager-webpack4": "^6.5.9",
+    "@storybook/node-logger": "^6.5.9",
+    "@storybook/preset-create-react-app": "^3.2.0",
+    "@storybook/react": "^6.5.9",
+    "@storybook/testing-library": "^0.0.13",
     "@types/autoprefixer": "^9.7.2",
     "@types/prettier": "^2.3.2",
+    "@types/storybook__addon-actions": "^5.2.1",
+    "@types/storybook__addon-info": "^5.2.4",
+    "@types/storybook__addon-knobs": "^5.2.1",
+    "@types/storybook__react": "^5.2.1",
     "@types/stylelint": "^13.13.2",
     "@types/testing-library__jest-dom": "^5.14.2",
     "@types/testing-library__user-event": "^4.2.0",
     "@typescript-eslint/eslint-plugin": "^4.31.1",
     "@typescript-eslint/parser": "^4.31.1",
+    "core-js": "2",
     "eslint-config-airbnb": "18.2.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.24.2",
@@ -73,6 +105,7 @@
     "eslint-plugin-react": "^7.25.1",
     "eslint-plugin-react-hooks": "4.2.0",
     "prettier": "^2.3.2",
+    "react-docgen-typescript-loader": "^3.7.2",
     "stylelint": "^13.13.1",
     "stylelint-config-recess-order": "^2.5.0",
     "stylelint-config-standard": "^22.0.0",
