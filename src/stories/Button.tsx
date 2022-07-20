@@ -1,37 +1,32 @@
 import React from 'react';
-import './button.css';
 
-type ButtonProps = {
-  label: string;
-  primary: boolean;
-  backgroundColor: string;
-  size: 'small' | 'medium' | 'large';
+type Props = {
+  outlined: boolean;
+  size: 'small' | 'middle';
+  children: React.ReactNode;
   onClick: () => void;
 };
 
-const Button = ({
-  primary = false,
-  size = 'medium',
-  backgroundColor,
-  label,
-  ...props
-}: ButtonProps) => {
-  const mode = primary
-    ? 'storybook-button--primary'
-    : 'storybook-button--secondary';
-
-  return (
-    <button
-      type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(
-        ' ',
-      )}
-      style={{ backgroundColor }}
-      {...props}
-    >
-      {label}
-    </button>
-  );
-};
-
+const Button: React.FC<Props> = ({
+  outlined = false,
+  size = 'middle',
+  children,
+  onClick,
+}) => (
+  <button
+    type="button"
+    className={`
+        rounded
+        ${size === 'middle' ? 'px-5 py-1' : 'px-3 py-1 text-sm'}
+        ${
+          outlined
+            ? 'border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white'
+            : 'border-none bg-blue-600 text-white hover:bg-blue-500'
+        }
+      `}
+    onClick={onClick}
+  >
+    {children}
+  </button>
+);
 export default Button;
