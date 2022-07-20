@@ -20,7 +20,7 @@ module.exports = {
         },
       },
       fontFamily: {
-        lato: ['Lato', 'sans-serif'],
+        avenir: ['Avenir', 'sans-serif'],
         noto: ['Noto Sans', 'sans-serif'],
       },
       spacing: {

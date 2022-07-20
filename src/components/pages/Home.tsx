@@ -1,15 +1,10 @@
-import React from 'react';
-// import Navbar from 'components/templates/Navbar';
-// import Footer from '../templates/Footer';
-import MainVisual from 'components/templates/MainVisual';
+import { VFC } from 'react';
 
-const HomePage: React.FC = () => (
+const Home: VFC = () => (
   <>
-    <div className="custom-body">
-      {/* <Navbar /> */}
-      <MainVisual />
-      {/* <Footer /> */}
-    </div>
+    <h1>This is home</h1>
+    <p>This is home</p>
   </>
 );
-export default HomePage;
+
+export default Home;
